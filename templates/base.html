@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css" />
+        {% if FEED_RSS %}
+        <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+  
+        <!-- Set the viewport width to device width for mobile -->
+        <meta name="viewport" content="width=device-width" />
+        
+        <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/favicon.png" />
+
+        <!-- Crete Round Web font <3 -->
+        <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+                
+</head>
+
+<body id="index" class="home">
+    <div id="osl-information">
+        <div id="osl-information-container">
+            <div id="osl-logo">
+                {{ SITENAME }} is hosted and developed by the Oregon State University <a href="http://osuosl.org">Open Source Lab <img src="{{ SITEURL }}/theme/img/osl-logo.png" alt="Open Source Lab"/> </a>
+            </div>
+        </div>
+    </div>
+
+        <header id="banner" class="page-header">
+        	<div class="row">
+    				<div class="logo">
+     		    	   	<a href="{{ SITEURL }}"><img src="{{ SITEURL }}/theme/img/logo.png" alt="{{ SITENAME }} Logo" /></a>
+     	      	  	</div>
+     	       
+        			<div class="navigation">	
+        				<ul>
+                            {% for title, link in MENUITEMS %}
+                                <li><a href="{{ link }}">{{ title }}</a></li>
+                            {% endfor %}
+   						</ul>
+    				</div>
+    				
+    				<div id="download">
+                        <a href="#" class="download-button">Download</a><br />
+                        <p>or, view the <a href="#">code repository</a>.</p>
+                    </div>
+    		</div>
+    	</header>
+
+        <div class="main-content">
+            <div id="welcome-message">
+
+                 {% block content %}
+                 {% endblock %}
+
+                
+            </div>
+
+        <div class="sidebar">
+                <h5>Documentation</h5>
+                <p>Available on <a href="#">this site</a>.
+                <hr />
+                <h5>Pages</h5>
+                    <ul>
+
+                        {% for p in PAGES %}
+                            <li {% if p == page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                        {% endfor %}
+
+                        <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+
+                        {#{% for cat, null in categories %}
+                            <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                        {% endfor %}#}
+                    </ul>
+                <hr />
+                <h5>License</h5>
+                <p>Ganeti Web Manager is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 License</a>.</p>
+        </div>
+
+        </div>
+
+        <footer>
+            <div class="row">
+                <div id="osu-logo">
+                    <img src="{{ SITEURL }}/theme/img/osu-logo.png" alt="Oregon State tag" />
+                </div>
+
+                <div id="osuosl-logo">
+                    <img src="{{ SITEURL }}/theme/img/osl-logo-white.png" alt="Open source Lab Logo" />
+                </div>
+
+                <div id="footer-text">
+                    <p><strong>{{ SITENAME }}</strong> is hosted and developed by the <a href="http://osuosl.org">OSU Open Source Lab</a></p>
+                </div>
+
+                <div id="donate">
+                    <a href="http://osuosl.org/donate" class="button">Donate</a>
+                </div>
+            </div>
+        </footer>
+    
+  </body>
+</html>
+
+{% include 'analytics.html' %}
+</body>
+</html>

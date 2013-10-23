@@ -1,0 +1,393 @@
+// Global Foundation Settings
+@import "settings";
+
+// Comment out this import if you don't want to use normalize
+@import "normalize";
+
+@import "foundation/components/global"; // *always required
+@import "foundation/components/grid";
+// @import "foundation/components/visibility";
+// @import "foundation/components/block-grid";
+@import "foundation/components/type";
+@import "foundation/components/buttons";
+// @import "foundation/components/forms"; // *requires components/buttons
+// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+// @import "foundation/components/button-groups"; // *requires components/buttons
+// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
+// @import "foundation/components/split-buttons"; // *requires components/buttons
+// @import "foundation/components/flex-video";
+// @import "foundation/components/section";
+// @import "foundation/components/top-bar";  // *requires components/grid
+// @import "foundation/components/orbit";
+// @import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+// @import "foundation/components/alert-boxes";
+@import "foundation/components/breadcrumbs";
+@import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+@import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+// @import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+// @import "foundation/components/dropdown";
+
+#osl-information {
+	width:100%;
+	background:#332E2C url('/theme/img/dark-concrete.jpg') repeat;
+	padding:emCalc(12px) 0;
+	border-bottom:1px solid #181514;
+	color:#fff;
+}
+
+#osl-information a:link,
+#osl-information a:active,
+#osl-information a:visited,
+#download a:link,
+#download a:active,
+#download a:visited,
+footer a:link,
+footer a:active,
+footer a:visited {
+	color:#fff;
+}
+
+#osl-information-container {
+	@extend .row;
+	text-align:right;
+}
+
+#osl-logo {
+	@extend .large-12, .columns;
+	font-size:.7em;
+}
+
+#osl-logo img {
+	display:inline;
+	margin-left:emCalc(8px);
+}
+
+#other-links {
+	@extend .large-11, .columns;
+}
+
+#other-links ul {
+	display:inline;
+	padding:0px;
+	margin:0px;
+}
+
+#other-links ul li {
+	display:inline;
+	padding:0px;
+	margin:0px emCalc(8px) 0px 0px;
+}
+
+/* * * *
+Ganeti Web Manager Styles
+* * * */
+
+body {
+	background:url('/theme/img/paper.jpg') repeat;
+}
+header {
+	@extend .large-12, .small-12, .columns;
+	background:#294562 url('/theme/img/concrete.jpg') repeat;
+	float:none;
+	padding-top:emCalc(32px);
+	padding-bottom:emCalc(64px);
+}
+
+.logo {
+	@extend .large-3, .columns;
+}
+
+.navigation {
+	@extend .large-6, .columns;
+	padding-top:emCalc(20px);
+}
+
+.navigation ul {
+	margin:0px;
+	list-style:none;
+	display:inline;
+}
+
+.navigation ul li,
+.footer-navigation ul li {
+	display:inline;
+	margin:0px emCalc(12px) 0px 0px;
+}
+
+.navigation ul li a:link,
+.navigation ul li a:active,
+.navigation ul li a:visited,
+.footer-navigation ul li a:link,
+.footer-navigation ul li a:active,
+.footer-navigation ul li a:visited {
+	color:#fff;
+	text-decoration:none;
+}
+
+.navigation ul li a:hover,
+.footer-navigation ul li a:hover {
+	text-decoration:underline;
+}
+
+#footer-text {
+	@extend .large-4, .columns;
+	text-align:right;
+}
+
+#donate {
+	@extend .large-1, .columns;
+}
+
+#download {
+	@extend .large-3, .columns;
+	text-align:right;
+	color:#fff;
+}
+
+#download p {
+	font-size:.7em;
+	padding:0px;
+	margin:0px;
+}
+
+header h1 {
+	color:#fff;
+	letter-spacing:-.03em;
+	font-weight:normal;
+}
+
+.main-content {
+	@extend .row;
+	margin-top:emCalc(-32px);
+	position:relative;
+	z-index:99;
+}
+
+#welcome-message {
+	@extend .large-9, .small-12, .columns;
+	border:1px solid #eaeaea;
+	background:#fff;
+	padding:2em;
+	min-height:600px;
+}
+
+#welcome-image {
+	padding:emCalc(16px) 0 emCalc(16px) 0;	
+	width:100%;
+	clear:both;
+}
+
+#welcome-image small {
+	font-size:.7em;
+	color:#46413D;
+	margin:0px;
+	padding:0px;
+}
+
+#welcome-header {
+	@extend .large-9, .columns;
+	padding-left:0px;
+	padding-right:0px;
+}
+
+#contact-panel {
+	@extend .large-3, .columns;
+	padding-left:0px;
+}
+
+#screenshots {
+	@extend .large-9, .columns;
+	padding-right:0px;
+}
+
+.sidebar {
+	padding-top:emCalc(48px);
+	@extend .large-3, .small-12, .columns;
+}
+
+.download-button {
+	@extend .button, .success;
+	margin:emCalc(6px) 0px;
+}
+
+a.download-button:link,
+a.download-button:active,
+a.download-button:visited {
+	text-decoration:none;
+}
+
+.code {
+	margin:emCalc(8px) 0;
+	background:#ddd;
+	padding:emCalc(8px);
+	font-family:monospace, serif;
+	color:#000;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+.code p {
+	padding:0px;
+	color:#fff;
+}
+
+p.pre-header {
+	padding:0px;
+	margin:0px;
+}
+
+p.pre-header a:link,
+p.pre-header a:active,
+p.pre-header a:visited,
+p.pre-header a:hover {
+	text-decoration:none;
+	color:#333;
+}
+
+#getting-started h3 {
+	color:#fff;
+}
+
+footer {
+	background:#332E2C url('/theme/img/dark-concrete.jpg') repeat;
+	padding:emCalc(64px) 0 emCalc(32px) 0;
+	margin-top:emCalc(-32px)
+}
+
+footer p {
+	color:#fff;
+}
+
+#osu-logo {
+	@extend .large-1, .columns;
+}
+
+#osuosl-logo {
+	@extend .large-2, .columns;
+}
+
+#donate {
+	@extend .large-2, .columns;
+	text-align:right;
+}
+
+/* * * *
+Typography
+* * * */
+a:link,
+a:active,
+a:visited {
+	text-decoration:underline;
+}
+
+.byline {
+	text-transform:uppercase;
+	color:#777;
+	font-size:.9em;
+}
+
+button a:link,
+button a:active,
+button a:visited {
+	text-decoration:none;
+}
+
+h3 a:link,
+h3 a:active,
+h3 a:visited,
+h3 a:hover,
+h4 a:link,
+h4 a:active,
+h4 a:visited,
+h4 a:hover {
+	text-decoration:none;
+}
+
+.main-content ul{
+	padding:0 0 0 emCalc(25px);
+	margin:0px;
+	list-style:square;
+}
+
+
+ol {
+	padding:0 0 0 emCalc(25px);
+	margin:0px;
+}
+
+ol li {
+	padding:emCalc(16px) 0 0 0;
+	margin:0px;
+}
+
+ol li:first-child {
+	padding:emCalc(2px) 0 0 0;
+}
+
+strong {
+	font-style: normal;
+	font-weight: 600;
+}
+
+iframe {
+	width:100%;
+}
+
+@media only screen and (max-width: 48em) {
+	footer {
+	margin:0px;
+	padding:20px 0;
+	}
+
+	#osl-information-container {
+	text-align:left;
+	line-height:2;
+	}
+
+	#download {
+	text-align:center;
+	padding:16px 0 0 0;
+	line-height:3;
+	}
+
+	#download p {
+	font-size:1.2em;
+	}
+
+	#footer-text {
+	text-align:center;
+	padding:16px 0 0 0;
+	}
+
+	#donate {
+	text-align:center;
+	}
+
+	#osu-logo {
+	padding-bottom:16px;
+	}
+
+	.logo {
+	text-align:center;
+	}
+
+	.navigation {
+	text-align:center;
+	}
+
+}

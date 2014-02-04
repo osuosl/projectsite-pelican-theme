@@ -42,18 +42,12 @@
 
 #osl-information {
 	width:100%;
-	background:#332E2C url('/theme/img/dark-concrete.jpg') repeat;
+	background: #424242; /*#332E2C url('/theme/img/dark-concrete.jpg') repeat;*/
 	padding:emCalc(12px) 0;
 	border-bottom:1px solid #181514;
 	color:#fff;
 }
 
-#osl-information a:link,
-#osl-information a:active,
-#osl-information a:visited,
-#download a:link,
-#download a:active,
-#download a:visited,
 footer a:link,
 footer a:active,
 footer a:visited {
@@ -73,6 +67,10 @@ footer a:visited {
 #osl-logo img {
 	display:inline;
 	margin-left:emCalc(8px);
+}
+
+#osl-information a:link{
+	color: #F37321;
 }
 
 #other-links {
@@ -100,7 +98,7 @@ body {
 }
 header {
 	@extend .large-12, .small-12, .columns;
-	background:#294562 url('/theme/img/concrete.jpg') repeat;
+	background: #5D87A1; /*#294562 url('/theme/img/concrete.jpg') repeat;*/
 	float:none;
 	padding-top:emCalc(32px);
 	padding-bottom:emCalc(64px);
@@ -154,13 +152,17 @@ header {
 #download {
 	@extend .large-3, .columns;
 	text-align:right;
-	color:#fff;
+	color:#000000;
+	font-family: "crete round", serif;
+	font-size: 16px;
 }
 
 #download p {
+font-family: "crete round", serif;
 	font-size:.7em;
 	padding:0px;
 	margin:0px;
+	color: #000000;
 }
 
 header h1 {
@@ -214,6 +216,7 @@ header h1 {
 }
 
 .sidebar {
+	float: left;
 	padding-top:emCalc(48px);
 	@extend .large-3, .small-12, .columns;
 }
@@ -221,12 +224,24 @@ header h1 {
 .download-button {
 	@extend .button, .success;
 	margin:emCalc(6px) 0px;
+	background: #F37321;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border: 2px solid black;
+	
+
+}
+.download-button:hover,
+.download-button:focus{
+	background: #D55503; /*#DF5F0D;*/	 
 }
 
 a.download-button:link,
 a.download-button:active,
 a.download-button:visited {
 	text-decoration:none;
+	color: #000000;
 }
 
 .code {
@@ -264,7 +279,7 @@ p.pre-header a:hover {
 }
 
 footer {
-	background:#332E2C url('/theme/img/dark-concrete.jpg') repeat;
+	background: #424242; /*#332E2C url('/theme/img/dark-concrete.jpg') repeat;*/
 	padding:emCalc(64px) 0 emCalc(32px) 0;
 	margin-top:emCalc(-32px)
 }
@@ -305,6 +320,7 @@ button a:link,
 button a:active,
 button a:visited {
 	text-decoration:none;
+	color: #000000;
 }
 
 h3 a:link,
@@ -390,4 +406,11 @@ iframe {
 	text-align:center;
 	}
 
+}
+.headertext{
+font-family: 'Crete round', serif;
+font-size: 16px;
+text-align: center;
+margin: auto 0;
+vertical-align: middle;
 }

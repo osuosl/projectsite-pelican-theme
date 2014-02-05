@@ -7,7 +7,7 @@
         {% if FEED_RSS %}
         <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
         {% endif %}
-  
+  	<!--Jquery libraries-->
         <!-- Set the viewport width to device width for mobile -->
         <meta name="viewport" content="width=device-width" />
         
@@ -22,7 +22,7 @@
     <div id="osl-information">
         <div id="osl-information-container">
             <div id="osl-logo">
-                {{ SITENAME }} is hosted and developed by the Oregon State University <a href="http://osuosl.org">Open Source Lab <img src="{{ SITEURL }}/theme/img/osl-logo.png" alt="Open Source Lab"/> </a>
+		<p class="headertext"> {{ SITENAME }} is hosted and developed by the Oregon State University <a id="osl-link" href="http://osuosl.org">Open Source Lab <!--<img src="{{ SITEURL }}/theme/img/osl-logo.png" alt="Open Source Lab"/>--><img src="/projectsite-pelican-theme/static/img/osl-logo.png"> </a></p>
             </div>
         </div>
     </div>
@@ -41,21 +41,24 @@
    						</ul>
     				</div>
     				
-    				<div id="download">
+    		<div class="download">
                         <a href="#" class="download-button">Download</a><br />
-                        <p>or, view the <a href="#">code repository</a>.</p>
+                       <!-- <p>or, view the <a href="#">code repository</a>.</p>-->
                     </div>
-    		</div>
+	<div class="githubfork">
+	<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+	</div>    	
+</div>
     	</header>
 
         <div class="main-content">
-            <div id="welcome-message">
+            <!--<div id="welcome-message">
 
                  {% block content %}
                  {% endblock %}
 
                 
-            </div>
+            </div>-->
 
         <div class="sidebar">
                 <h5>Documentation</h5>
@@ -78,25 +81,30 @@
                 <h5>License</h5>
                 <p>Ganeti Web Manager is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 License</a>.</p>
         </div>
-
+	<div id="welcome-message">
+	{%block content%}
+	{%endblock%}
+	</div>
         </div>
 
         <footer>
             <div class="row">
                 <div id="osu-logo">
-                    <img src="{{ SITEURL }}/theme/img/osu-logo.png" alt="Oregon State tag" />
+                    <!--<img src="{{ SITEURL }}/theme/img/osu-logo.png" alt="Oregon State tag" />-->
+			<img src="../static/img/osu-logo.png">
                 </div>
 
                 <div id="osuosl-logo">
-                    <img src="{{ SITEURL }}/theme/img/osl-logo-white.png" alt="Open source Lab Logo" />
+                   <!-- <img src="{{ SITEURL }}/theme/img/osl-logo-white.png" alt="Open source Lab Logo" />-->
+			<img src="../static/img/osl-logo-white.png" id="osl-logo">
                 </div>
 
                 <div id="footer-text">
                     <p><strong>{{ SITENAME }}</strong> is hosted and developed by the <a href="http://osuosl.org">OSU Open Source Lab</a></p>
                 </div>
 
-                <div id="donate">
-                    <a href="http://osuosl.org/donate" class="button">Donate</a>
+                <div class="download">
+                    <a href="http://osuosl.org/donate" class="download-button">Donate</a>
                 </div>
             </div>
         </footer>

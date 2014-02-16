@@ -22,12 +22,12 @@
     <div id="osl-information">
         <div id="osl-information-container">
             <div id="osl-logo">
-		<p class="headertext"> {{ SITENAME }} is hosted and developed by the Oregon State University <a id="osl-link" href="http://osuosl.org">Open Source Lab <!--<img src="{{ SITEURL }}/theme/img/osl-logo.png" alt="Open Source Lab"/>--><img src="/projectsite-pelican-theme/static/img/osl-logo.png"> </a></p>
+		<p class="headertext"> {{ SITENAME }} is hosted and developed by the Oregon State University <a class="osl-link" href="http://osuosl.org">Open Source Lab <!--<img src="{{ SITEURL }}/theme/img/osl-logo.png" alt="Open Source Lab"/>--></a></p>
             </div>
         </div>
     </div>
 
-        <header id="banner" class="page-header">
+        <div id="banner" class="page-header">
         	<div class="row">
     				<div class="logo">
      		    	   	<a href="{{ SITEURL }}"><img src="{{ SITEURL }}/theme/img/logo.png" alt="{{ SITENAME }} Logo" /></a>
@@ -42,14 +42,18 @@
     				</div>
     				
     		<div class="download">
-                        <a href="#" class="download-button">Download</a><br />
+                        <a href="#" class="download-button">Download</a>
+<br>
                        <!-- <p>or, view the <a href="#">code repository</a>.</p>-->
                     </div>
-	<div class="githubfork">
+		<div class="download">
+			<a href="https://github.com/osuosl/{{SITENAME}}" class="download-button">Github</a>
+		</div>
+	<!--<div class="githubfork">
 	<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
-	</div>    	
+	</div>-->    	
 </div>
-    	</header>
+    	</div>
 
         <div class="main-content">
             <!--<div id="welcome-message">
@@ -79,7 +83,7 @@
                     </ul>
                 <hr />
                 <h5>License</h5>
-                <p>Ganeti Web Manager is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 License</a>.</p>
+		<p>{{SITENAME}} is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 License</a>.</p>
         </div>
 	<div id="welcome-message">
 	{%block content%}
@@ -100,12 +104,12 @@
                 </div>
 
                 <div id="footer-text">
-                    <p><strong>{{ SITENAME }}</strong> is hosted and developed by the <a href="http://osuosl.org">OSU Open Source Lab</a></p>
+                    <p><strong>{{ SITENAME }}</strong> is hosted and developed by the <a class="osl-link" href="http://osuosl.org">OSU Open Source Lab</a></p>
                 </div>
 
-                <div class="download">
+                <!--<div class="download">
                     <a href="http://osuosl.org/donate" class="download-button">Donate</a>
-                </div>
+                </div>-->
             </div>
         </footer>
     

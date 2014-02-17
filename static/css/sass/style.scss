@@ -41,6 +41,7 @@
 // @import "foundation/components/dropdown";
 
 body{
+    height: 100%;
     margin: 0px;
     padding: 0px;
     background: #F3F2ED;
@@ -104,12 +105,12 @@ body{
 
 .logo {
     @extend .large-3, .columns;
-}
+display: inline-block;}
 
 .navigation {
     @extend .large-4, .columns;
     padding-top:emCalc(20px);
-}
+display: inline-block;}
 
 .navigation ul {
     margin:0px;
@@ -138,11 +139,6 @@ body{
     text-decoration:underline;
 }
 
-#footer-text {
-    @extend .large-4, .columns;
-    text-align:right;
-}
-
 .download {
     @extend .large-3, .columns;
     color:#000000;
@@ -152,7 +148,7 @@ body{
     padding: 0px;
     width: auto;
     text-align: center;
-}
+display:inline-block;}
 
 .download p {
     font-family: "crete round", serif;
@@ -185,7 +181,7 @@ body{
     background:#fff;
     padding:2em;
     min-height:600px;
-}
+height: 100vh}
 
 #welcome-image {
     padding:emCalc(16px) 0 emCalc(16px) 0;	
@@ -294,6 +290,7 @@ p.pre-header a:hover {
     color:#fff;
 }
 
+/*Footer CSS*/
 footer {
     background: #424242; /*#332E2C url('/theme/img/dark-concrete.jpg') repeat;*/
     padding:emCalc(64px) 0 emCalc(32px) 0;
@@ -304,22 +301,37 @@ footer p {
     color:#fff;
 }
 
-#osu-logo {
-    @extend .large-2, .columns;
-}
-#osl-logo{
-    height: auto;
-    width: 100%;
-    display: inline-block;
+#footerRow{
+    width: 80vw;
+    max-width: 80em;
+    margin: 0px auto;
 }
 
+.footerDiv{
+    display: inline-block;
+    padding: 10px;
+    margin: 0px;
+width: 200px !important;}
+
+#osu-logo {
+@extend .large-2, .columns;}
+
 #osuosl-logo {
-    @extend .large-2, .columns;
-}
+@extend .large-2, .columns;}
+
+footer img{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+margin: 0px;}
 
 .donate {
     @extend .large-2, .columns;
     text-align:right;
+}
+#footer-text{
+    text-align:center;
+    padding: 16px 0px 0px;
 }
 
 /* * * *
@@ -439,10 +451,21 @@ iframe {
     width: 95vw;}
 
 }
-@media only screen and (max-width: 780px){
+@media only screen and (max-width: 768px){
     .sidebar{
 	display:none;
     }
-.row {
-text-align: center;}
-    }
+
+    .download{
+	width: 50%;
+	margin: 0px;
+    padding: 0px;}
+
+    #welcome-message{
+	margin-right: auto 0;
+margin-left: auto 0;}
+}
+@media only screen and (max-width: 320px){
+.download{
+width: 100%;}
+}

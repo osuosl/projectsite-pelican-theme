@@ -3,7 +3,7 @@
 {% block content %}         
 
 <div id="welcome-image">
-    <img src="{{ SITEURL }}/theme/img/computer.png"><small>Screenshot of a user adding a new VM to Ganeti Web Manager. </small>
+    <img src="./theme/img/computer.png"><small>Screenshot of a user adding a new VM to Ganeti Web Manager. </small>
 </div>
 
 <p>Ganeti Web Manager is a Django based web application that allows administrators and clients access to their ganeti clusters. It includes a permissions and quota system that allows administrators to grant access to both clusters and virtual machines. It also includes user groups for structuring access to organizations.</p>
@@ -53,12 +53,12 @@
         {% endif %}
     {% endfor %}
 {% else %}
-<section id="content" class="body">    
+<!--<section id="content" class="body">    
 <h2>Pages</h2>
     {% for page in PAGES %}
         <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
     {% endfor %}
-</section>
+    </section>-->
 {% endif %}
 
 {% endblock content %}

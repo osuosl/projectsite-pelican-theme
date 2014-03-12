@@ -55,8 +55,15 @@ body{
     padding:emCalc(12px);
     border-bottom:1px solid #181514;
     color:#fff;
+    position:relative;
 }
-
+#osl-information a{
+text-decoration: none;
+transition: .5s;
+}
+#osl-informaion a:hover{
+color: #F3CEBB;
+}
 #osl-information-container {
     @extend .row;
     text-align:right;
@@ -98,9 +105,12 @@ body{
 .page-header {
     @extend .large-12, .small-12, .columns;
     background: #5D87A1; /*#294562 url('/theme/img/concrete.jpg') repeat;*/
-    float:none;
+    //float:none;
     padding-top:emCalc(32px);
     padding-bottom:emCalc(64px);
+    top:0px;
+position:relative;
+z-index:99;
 }
 
 .logo {
@@ -131,19 +141,23 @@ display: inline-block;}
 .footer-navigation ul li a:active,
 .footer-navigation ul li a:visited {
     color:#fff;
+    font-family: 'Crete round', serif;
+    font-size: 1.9em;
+    text-align: left;
+    padding: 5px;
     text-decoration:none;
+transition: .5s;
 }
 
 .navigation ul li a:hover,
 .footer-navigation ul li a:hover {
-    text-decoration:underline;
+    color: #ee5d1a;
 }
 
 .download {
     @extend .large-3, .columns;
-    color:#000000;
     font-family: "crete round", serif;
-    font-size: 16px;
+    font-size: 1.1em;
     margin: 10px;
     padding: 0px;
     width: auto;
@@ -152,11 +166,14 @@ display:inline-block;}
 
 .download p {
     font-family: "crete round", serif;
-    font-size:.7em;
+    font-size:1.1em;
     padding:0px;
     margin:0px;
-    color: #000000;
+    color: #fff;
 }
+
+.download p:hover{
+color: #F3CEBB;}
 
 .page-header h1 {
     color:#fff;
@@ -164,13 +181,40 @@ display:inline-block;}
     font-weight:normal;
 }
 
+.download-button {
+    @extend .button, .success;
+    margin:emCalc(6px) 0px;
+    background: #424242;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border: 2px solid black;
+    color: #fff;
+}
+
+.download-button:hover,
+.download-button:focus{
+    background: #646464; /*#DF5F0D;*/
+    color: #f3cebb;
+    cursor: pointer;
+}
+.download-button:active{
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+a.download-button:link,
+a.download-button:active,
+a.download-button:visited {
+    text-decoration:none;
+    color: #ffffff;
+}
+
 /*Main content CSS*/
 
 .main-content {
     @extend .row;
-    margin-top:emCalc(-32px);
-    position:relative;
-    z-index:99;
+    /*margin-top:emCalc(-32px); z-index:99;*/
+    position:relative;/*absolute*/
     width: 80vw;
     max-width: 80em;
 }
@@ -180,11 +224,10 @@ display:inline-block;}
     border:2px solid #ddd;
     background:#fff;
     padding:2em;
-    min-height:600px;
-height: 100vh}
+min-height:600px;}
 
 #welcome-image {
-    padding:emCalc(16px) 0 emCalc(16px) 0;	
+    padding:emCalc(15px) 0 emCalc(16px) 0;	
     width:100%;
     clear:both;
 }
@@ -215,47 +258,32 @@ height: 100vh}
 /*Sidebar Styles*/
 .sidebar {
     float: left;
-    padding-top:emCalc(48px);
+    padding-top:emCalc(15px);
     @extend .large-3, .small-12, .columns;
     background: #424242;
 }
 .sidebar h5{
     color: #fff;
     font-family: 'crete round', serif;
-    font-size: 24px;
+    font-size: 1.9em;
     text-align: center;
 }
-.sidebar p{
+.sidebar p, .sidebar li{
     font-family: 'crete round', serif;
     color: #fff;
+    font-size: 1.2em;
 }
+.sidebar a{
+    color: #ee5d1a;
+    text-decoration: none !important;
+transition: .5s;}
 
-.download-button {
-    @extend .button, .success;
-    margin:emCalc(6px) 0px;
-    background: #8194a1;
-    border-radius: 15px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border: 2px solid black;
-
-
+.sidebar a:hover{
+    color: #F3CEBB;
 }
-.download-button:hover,
-.download-button:focus{
-    background: #5d87a1; /*#DF5F0D;*/	 
+.sidebar ul{
+	list-style-type: none;
 }
-.download-button:active{
-    box-shadow: 0px 0px 5px 1px black;
-}
-
-a.download-button:link,
-a.download-button:active,
-a.download-button:visited {
-    text-decoration:none;
-    color: #000000;
-}
-
 .code {
     margin:emCalc(8px) 0;
     background:#ddd;
@@ -370,7 +398,7 @@ h4 a:hover {
 .main-content ul{
     padding:0 0 0 emCalc(25px);
     margin:0px;
-    list-style:square;
+    list-style: none;
 }
 
 .headertext{
@@ -463,9 +491,18 @@ iframe {
 
     #welcome-message{
 	margin-right: auto 0;
-margin-left: auto 0;}
+    margin-left: auto 0;}
+    #footer-text{
+    width: 100%;}
 }
-@media only screen and (max-width: 320px){
-.download{
-width: 100%;}
+@media only screen and (max-width: 380px){
+   #footer-text{
+    display: block;
+    }
+    .footerDiv{
+	float: none !important;
+    width:100%;
+    }
+    .download{
+    width: 100%;}
 }

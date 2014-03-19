@@ -5,8 +5,8 @@
 <div id="welcome-image">
     <img src=#>
 </div>
-
-{{ index.content }}
+{% for page in INDEX %}
+{{ page.content }}
 
 <p class="pre-header"><a href="{{ SITEURL }}/archives.html">{{ SITENAME }} Updates</a></p>
 {% if articles %}

@@ -1,24 +1,31 @@
 {% extends "base.html" %}
+{% block indexpage %}
+<div id="indexpage"> <!--MAKE VARIABLES!!!-->
+		<p>Ganeti Web Manager is a Django based web application that allows administrators and clients access to their Ganeti clusters.</p>
+	<div id="welcome-image">
+	<img src="./theme/img/computer.png">
+</div>
+</div>
+<div id="downloadRibbon">
+	<img src="./theme/img/arrow-down.png">
+	<h2><a href="#">Download</a></h2>
+
+</div>
+{% endblock%}
 {% block content_title %}{% endblock %}
 {% block content %}         
+<!--THIS TOO!! PUT INTO RST DOC!-->
+<!--<p>Ganeti Web Manager is a Django based web application that allows administrators and clients access to their ganeti clusters. It includes a permissions and quota system that allows administrators to grant access to both clusters and virtual machines. It also includes user groups for structuring access to organizations.</p>
+<hr />-->
 
-<div id="welcome-image">
-    <img src="./theme/img/computer.png"><small>Screenshot of a user adding a new VM to Ganeti Web Manager. </small>
-</div>
-
-<p>Ganeti Web Manager is a Django based web application that allows administrators and clients access to their ganeti clusters. It includes a permissions and quota system that allows administrators to grant access to both clusters and virtual machines. It also includes user groups for structuring access to organizations.</p>
-
-<hr />
-
-
-<h3>Getting Started</h3>
+<!--<h3>Getting Started</h3>
     <ol>
         <li><strong>Install dependencies:</strong><br /> Python, Pip, Fabric, and VirtualEnv</li>
         <li><strong>Get the Ganeti Web Manager code:</strong> <br />Clone from the <a href="#">repository</a> or download a <a href="#">release tarball</a></li>
         <li><strong>Deploy fabric environment:</strong> <br /> <div class="code">fab dev deploy</div> <em>or</em> <div class="code">fab prod deploy</div></li>
         <li><strong>Configure Settings:</strong> <br />Copy settings.py.dist to settings.py and make any modifications</li>
         <li><strong>Sync database, then run the server:</strong> <br />./manage.py syncdb –migrate, then ./manage.py runserver</li>
-    </ol>
+	</ol>-->
 
 <hr />
 <p class="pre-header"><a href="{{ SITEURL }}/archives.html">{{ SITENAME }} Updates</a></p>
@@ -55,9 +62,9 @@
 {% else %}
 <!--<section id="content" class="body">    
 <h2>Pages</h2>
-    {% for page in PAGES %}
+{#{% for page in PAGES %}
         <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-    {% endfor %}
+		{% endfor %}#}
     </section>-->
 {% endif %}
 

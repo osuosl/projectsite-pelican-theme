@@ -1,108 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="./theme/css/style.css" type="text/css" />
-		{% if FEED_RSS %}
-		<link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
-		{% endif %}
-		<!--Jquery libraries-->
-		<!-- Set the viewport width to device width for mobile -->
-		<meta name="viewport" content="width=device-width" />
+    <head>
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css" />
+        {% if FEED_RSS %}
+        <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        <!--Jquery libraries-->
+        <!-- Set the viewport width to device width for mobile -->
+        <meta name="viewport" content="width=device-width" />
+        <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/favicon.png" />
+        <!-- Crete Round Web font <3 -->
+        <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="page-header">
+            <div class="logo">
+                <a href="{{ SITEURL }}"><img src="./theme/img/logo.png" alt="{{ SITENAME }} Logo" /></a>
+            </div>
+            <div class="download">
+                <a href="#" class="download-button">Download</a>
+                <br>
+            </div>
+            <div class="download">
+                <a href="https://github.com/osuosl/{{SITENAME}}" class="download-button">Github</a>
+            </div>
+        </div>
+        {% block index %}
+        {% endblock %} 
+        <div class="main-content">
+            <div class="sidebar">
+                <h5>Documentation</h5>
+                <p><a href="#">Available here</a>
+                <hr />
+                <h5>Pages</h5>
+                <ul>
+                    {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for page in PAGES %}
+                    <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
 
-		<link rel="shortcut icon" href="./theme/img/favicon.png" />
+                    <li><a href="/archives.html">Archives</a></li>
 
-		<!-- Crete Round Web font <3 -->
-		<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+                    <!--{#{% for cat, null in categories %}
+                    <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endfor %}#}-->
+                </ul>
+                <hr />
+                <h5>License</h5>
+                <p>{{SITENAME}} is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 License</a>.</p>
+            </div>
+            <div id="welcome-message">
+                {% block content %}
+                {% for page in PAGES %}
+                {% if page.index %}
+                {{ page.content }}
+                {% endif %}
+                {% endfor %}
+                {% endblock %}
+            </div>
+        </div>
 
-	</head>
+        <footer>
+        <div class="row" id="footerRow">
+            <div id="osu-logo" class="footerDiv">
+                <a href="http://oregonstate.edu"><img src="./theme/img/Simple-black_1.png"></a>
+            </div>
 
-	<body id="index" class="home">
-		<div id="osl-information">
-			<div id="osl-information-container">
-				<div id="osl-logo">
-					<p class="headertext">{{ SITENAME }} is hosted and developed by the Oregon State University <a class="osl-link" href="http://osuosl.org">Open Source Lab</a></p>
-				</div>
-			</div>
-		</div>
-
-		<div id="banner" class="page-header">
-			<div class="row">
-				<div class="logo">
-					<a href="{{ SITEURL }}"><img src="./theme/img/logo.png" alt="{{ SITENAME }} Logo" /></a>
-				</div>
-				<div class="download">
-					<a href="#" class="download-button">Download</a>
-					<br>
-				</div>
-				<div class="download">
-					<a href="https://github.com/osuosl/{{SITENAME}}" class="download-button">Github</a>
-				</div>
-			</div>
-		</div>
-		<div class="indexpage">
-			{%block indexpage%}
-			{% endblock %}
-
-	<!--	<div class="navigation">	
-		    <ul>
-			<li><a href="https://ganeti-webmgr.readthedocs.org/en/latest/">Documentation</a></li>
-			{#{% for title, link in MENUITEMS %}
-			<li><a href="{{ link }}">{{ title }}</a></li>
-			{% endfor %}#}
-		    </ul>
-		</div>-->
-
-		<div class="download">
-		    <a href="#" class="download-button">Download</a>
-		    <br>
-		    <!-- <p>or, view the <a href="#">code repository</a>.</p>-->
-		</div>
-		<div class="main-content">
-			<div class="sidebar">
-				<h5>Documentation</h5>
-				<p><a href="#">Available here</a>
-				<hr />
-				<h5>Pages</h5>
-				<ul>
-					{% for title, link in MENUITEMS %}
-					<li><a href="{{ link }}">{{ title }}</a></li>
-					{% endfor %}
-				</ul>
-				<ul>
-					{% for page in PAGES %}
-					<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-					{% endfor %}
-
-					<li><a href="/archives.html">Archives</a></li>
-
-					<!--{#{% for cat, null in categories %}
-					<li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-					{% endfor %}#}-->
-				</ul>
-				<hr />
-				<h5>License</h5>
-				<p>{{SITENAME}} is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 License</a>.</p>
-			</div>
-			<div id="welcome-message">
-				{%block content%}
-				<h2>{{p.title}}</h2>
-				{%endblock%}
-			</div>
-		</div>
-
-		<footer>
-		<div class="row" id="footerRow">
-			<div id="osu-logo" class="footerDiv">
-				<a href="http://oregonstate.edu"><img src="./theme/img/Simple-black_1.png"></a>
-			</div>
-
-			<div id="footer-text">
-				<p><strong>{{ SITENAME }}</strong> is hosted and developed by the <a class="osl-link" href="http://osuosl.org">OSU Open Source Lab</a></p><p>This site built using <a href="http://docs.getpelican.com/en/3.3.0/">Pelican.</a></p>
-			</div>
-		</div>
-		</footer>
-		{% include 'analytics.html' %}
-	</body>
+            <div id="footer-text">
+                <p><strong>{{ SITENAME }}</strong> is hosted and developed by the <a class="osl-link" href="http://osuosl.org">OSU Open Source Lab</a></p><p>This site built using <a href="http://docs.getpelican.com/en/3.3.0/">Pelican.</a></p>
+            </div>
+        </div>
+        </footer>
+        {% include 'analytics.html' %}
+    </body>
 </html>

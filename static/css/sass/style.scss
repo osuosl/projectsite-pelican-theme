@@ -40,218 +40,128 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
+//Setting color variables
+//Bodybg defines the background color for the body
+$bodybg: #F3F2ED;
+
+//Primary color is for homepage banner, sidebar, and footer
+$primarycolor: #424242;
+
+//Secondary color is for nav menu and download bar
+$secondarycolor: #5D87A1;
+
+//Accent is for links
+$accent: #EE5D1A; 
+
+//And then we have text colors
+$darktext: #000;
+$lighttext: #fff;
+
+
 body{
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background: #F3F2ED;
-}
-
-/*Page banner CSS*/     
-
-#osl-information {
-    width:100%;
-    /*background: #424242; #332E2C url('/theme/img/dark-concrete.jpg') repeat;*/
-    padding:emCalc(12px);
-    border-bottom:1px solid #181514;
-    color:#424242;
-    position:relative;
-	height: 5vh;
-	min-height: 50px;
-}
-
-#osl-information a{
-text-decoration: none;
-transition: .5s;
-}
-#osl-informaion a:hover{
-color: #F3CEBB;
-}
-#osl-information-container {
-    @extend .row;
-    text-align:right;
-}
-
-#osl-logo {
-    @extend .large-12, .columns;
-    font-size:.7em;
-}
-
-#osl-logo img {
-    display:inline;
-    margin-left:emCalc(8px);
-}
-
-.osl-link{
-    color: #F37321;
-}
-
-/*Other links Stylings*/
-#other-links {
-    @extend .large-11, .columns;
-}
-
-#other-links ul {
-    display:inline;
-    padding:0px;
-    margin:0px;
-}
-
-#other-links ul li {
-    display:inline;
-    padding:0px;
-    margin:0px emCalc(8px) 0px 0px;
+    background: $bodybg;
 }
 
 /*Header and main navigation CSS*/
-
-.page-header {
+#page-header {
     @extend .large-12, .small-12, .columns;
-    background: #5D87A1; /*#294562 url('/theme/img/concrete.jpg') repeat;*/
-    //float:none;
+    background: $secondarycolor; 
     padding-top:emCalc(16px);
     padding-bottom:emCalc(16px);
     top:0px;
-	position:relative;
+	position: relative;
 	z-index:99;
-	height: 15vh;
-	min-height: 140px;
+	height: 100px;
 }
 
 .logo {
     @extend .large-3, .columns;
-display: inline-block;}
-
-.navigation {
-    @extend .large-4, .columns;
-    padding-top:emCalc(20px);
-display: inline-block;}
-
-.navigation ul {
-    margin:0px;
-    list-style:none;
-    display:inline;
-}
-
-.navigation ul li,
-.footer-navigation ul li {
-    display:inline;
-    margin:0px emCalc(12px) 0px 0px;
-}
-
-.navigation ul li a:link,
-.navigation ul li a:active,
-.navigation ul li a:visited,
-.footer-navigation ul li a:link,
-.footer-navigation ul li a:active,
-.footer-navigation ul li a:visited {
-    color:#fff;
-    font-family: 'Crete round', serif;
-    font-size: 1.9em;
-    text-align: left;
-    padding: 5px;
-    text-decoration:none;
-transition: .5s;
-}
-
-.navigation ul li a:hover,
-.footer-navigation ul li a:hover {
-    color: #ee5d1a;
+    display: inline-block;
 }
 
 .download {
     @extend .large-3, .columns;
     font-family: "crete round", serif;
     font-size: 1.1em;
-    margin: 10px;
+    margin: 0px 10px;
     padding: 0px;
     width: auto;
     text-align: center;
-display:inline-block;
+    display:inline-block;
 	float:right;
 }
 
-.download p {
-    font-family: "crete round", serif;
-    font-size:1.1em;
-    padding:0px;
-    margin:0px;
-    color: #fff;
-}
-
-.download p:hover{
-color: #F3CEBB;}
-
-.page-header h1 {
-    color:#fff;
-    letter-spacing:-.03em;
-    font-weight:normal;
-}
-
-.download-button {
+.download a{
     @extend .button, .success;
     margin:emCalc(6px) 0px;
-    background: #424242;
+    background: $primarycolor;
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border: 2px solid black;
-    color: #fff;
+    color: $lighttext;
 }
 
 .download-button:hover,
 .download-button:focus{
-    background: #646464; /*#DF5F0D;*/
-    color: #f3cebb;
+    background: #767676;
+    color: #fff;
     cursor: pointer;
 }
-.download-button:active{
-    box-shadow: 0px 0px 5px 1px black;
-}
 
-a.download-button:link,
-a.download-button:active,
-a.download-button:visited {
-    text-decoration:none;
-    color: #ffffff;
-}
+.download-button{
+    display:inline-block;
+    font-family: 'Crete round', serif;
+    font-size: 1.1em;
+    margin: 0px 10px;
+    float: right;
+    }
 
 /*Index page Styles*/
-.indexpage{
-	clear:both;
-	margin:0px;
-	padding: 0px;
-	height: 100px;
-	width: 100%;
-	position: relative;
-	display:table;
-}
-
 #indexpage{
-	background: #424242;
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
+	background: $primarycolor;
 	text-align: center;
 	height: 70vh;
 	min-height: 500px;
+    display: inline-block;
+    clear: both;
+}
+
+#indexpage:before{
+        content:'';
+        display: inline-block;
+        height:100%;
+        vertical-align: middle;
 }
 
 #indexpage p{
 	font-family: 'crete round', serif;
-	color: #fff;
+	color: $lighttext;
 	font-size: 24px;
 	padding: 20px;
 	width: 30%;
 	margin: 0px;
 	display: inline-block;
+    vertical-align: middle;
+}
+
+#welcome-image {
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+    max-width: 60%;
+    max-height: 80%;
+    vertical-align: middle;
 }
 
 #downloadRibbon{
 	width: 100%;
 	height: 10vh;
 	min-height: 90px;
-	background: #5D87A1;
+	background: $secondarycolor;
 	text-align: center;
 	margin: 0px;
 	padding: 0px;
@@ -268,19 +178,13 @@ a.download-button:visited {
 }
 
 #downloadRibbon a{
-	color: #fff;
+	color: $lighttext;
 	text-decoration: none;
 	transition: .5s;
 }
 
 #downloadRibbon a:hover{
-	color: #ee5d1a;
-}
-
-#downloadRibbon img{
-	height: 70%;
-	vertical-align: middle;
-	padding: 10px;
+	color: $accent;
 }
 
 /*Main content CSS*/
@@ -291,119 +195,60 @@ a.download-button:visited {
     position:relative;/*absolute*/
     width: 80vw;
     max-width: 80em;
+    border:2px solid #ddd;
+    background: $primarycolor;
+}
+
+.main-content ul{
+    padding:0;
+    margin:0px;
+    list-style: none;
 }
 
 #welcome-message {
     @extend .large-9, .small-12, .columns;
-    border:2px solid #ddd;
-    background:#fff;
+    background: #fff;
     padding:2em;
 min-height:600px;
-}
-
-#welcome-image {
-    padding:emCalc(64px) 0 emCalc(64px) 0;	
-    width:60%;
-    clear:both;
-	max-width: 1080px;
-	margin-right: auto;
-	margin-left: auto;
-	height:auto;
-	display: inline-block;
-}
-
-#welcome-image small {
-    font-size:.7em;
-    color:#46413D;
-    margin:0px;
-    padding:0px;
-}
-
-#welcome-header {
-    @extend .large-9, .columns;
-    padding-left:0px;
-    padding-right:0px;
-}
-
-#contact-panel {
-    @extend .large-3, .columns;
-    padding-left:0px;
-}
-
-#screenshots {
-    @extend .large-9, .columns;
-    padding-right:0px;
+    width: 70%;
 }
 
 /*Sidebar Styles*/
 .sidebar {
-    float: left;
     padding-top:emCalc(15px);
     @extend .large-3, .small-12, .columns;
-    background: #424242;
+    background: $primarycolor;
+    width: 30%;
 }
 .sidebar h5{
-    color: #fff;
+    color: $lighttext;
     font-family: 'crete round', serif;
     font-size: 1.9em;
     text-align: center;
 }
 .sidebar p, .sidebar li{
     font-family: 'crete round', serif;
-    color: #fff;
+    color: $lighttext;
     font-size: 1.2em;
     text-align: center;
 }
 .sidebar a{
-    color: #ee5d1a;
+    color: $lighttext;
     text-decoration: none !important;
 transition: .5s;
 	text-align: center;
 }
 
 .sidebar a:hover{
-    color: #F3CEBB;
+    color: $accent;
 }
 .sidebar ul{
 	list-style-type: none;
 }
-.code {
-    margin:emCalc(8px) 0;
-    background:#ddd;
-    padding:emCalc(8px);
-    font-family:monospace, serif;
-    color:#000;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px; /* future proofing */
-    -khtml-border-radius: 10px; /* for old Konqueror browsers */
-}
-
-.code p {
-    padding:0px;
-    color:#fff;
-}
-
-p.pre-header {
-    padding:0px;
-    margin:0px;
-}
-
-p.pre-header a:link,
-p.pre-header a:active,
-p.pre-header a:visited,
-p.pre-header a:hover {
-    text-decoration:none;
-    color:#333;
-}
-
-#getting-started h3 {
-    color:#fff;
-}
 
 /*Footer CSS*/
 footer {
-    background: #424242; /*#332E2C url('/theme/img/dark-concrete.jpg') repeat;*/
+    background: $primarycolor;
     padding:emCalc(64px) 0 emCalc(32px) 0;
     margin-top:emCalc(-32px)
 }
@@ -422,24 +267,25 @@ footer p {
     display: inline-block;
     padding: 10px;
     margin: 0px;
-width: 200px !important;}
-
-#osu-logo {
-@extend .large-2, .columns;}
+width: 200px !important;
+}
 
 #osuosl-logo {
-@extend .large-2, .columns;}
+@extend .large-2, .columns;
+}
 
 footer img{
     width: 100%;
     height: auto;
     padding: 10px;
-margin: 0px;}
+    margin: 0px;
+}
 
 .donate {
     @extend .large-2, .columns;
     text-align:right;
 }
+
 #footer-text{
     text-align:center;
     padding: 16px 0px 0px;
@@ -452,45 +298,12 @@ a:link,
 a:active,
 a:visited {
     text-decoration:none;
-
 }
 
 .byline {
     text-transform:uppercase;
     color:#777;
     font-size:.9em;
-}
-
-button a:link,
-button a:active,
-button a:visited {
-    text-decoration:none;
-    color: #000000;
-}
-
-h3 a:link,
-h3 a:active,
-h3 a:visited,
-h3 a:hover,
-h4 a:link,
-h4 a:active,
-h4 a:visited,
-h4 a:hover {
-    text-decoration:none;
-}
-
-.main-content ul{
-    padding:0;
-    margin:0px;
-    list-style: none;
-}
-
-.headertext{
-    font-family: 'Crete round', serif;
-    font-size: 16px;
-    text-align: center;
-    margin: auto 0;
-    vertical-align: middle;
 }
 
 ol {
@@ -516,26 +329,10 @@ iframe {
     width:100%;
 }
 
-
-
 @media only screen and (max-width: 980px) {
-    body{
-	text-align: center;
-    }
     footer {
 	margin:0px;
 	padding:20px 0;
-    }
-
-    #osl-information-container {
-	text-align:left;
-	line-height:2;
-    }
-
-    .download {
-	text-align:center;
-	padding:16px 0 0 0;
-	line-height:3;
     }
 
     .download p {
@@ -555,15 +352,12 @@ iframe {
 	text-align:center;
     }
 
-    .navigation {
-	text-align:center;
-    }
-
     .main-content{
     width: 95vw;}
 
 }
-@media only screen and (max-width: 768px){
+
+@media only screen and (max-width: 840px){
     .sidebar{
 	display:none;
     }
@@ -576,9 +370,11 @@ iframe {
     #welcome-message{
 	margin-right: auto 0;
     margin-left: auto 0;}
+    
     #footer-text{
     width: 100%;}
 }
+
 @media only screen and (max-width: 380px){
    #footer-text{
     display: block;

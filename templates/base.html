@@ -13,19 +13,14 @@
         <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/favicon.png" />
         <!-- Crete Round Web font <3 -->
         <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
-    </head>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
     <body>
         <div id="page-header">
-            <div class="logo">
-                <a href="{{ SITEURL }}"><img src="./theme/img/logo.png" alt="{{ SITENAME }} Logo" /></a>
-            </div>
-            <div class="download">
-                <a href="#" class="download-button">Download</a>
-                <br>
-            </div>
-            <div class="download">
-                <a href="https://github.com/osuosl/{{SITENAME}}" class="download-button">Github</a>
-            </div>
+                <a href="{{ SITEURL }}" id="logo"><img src="{{ SITEURL }}/theme/img/logo.png" alt="{{ SITENAME }} Logo" /></a>
+                <a href="https://github.com/osuosl/{{SITENAME}}">Github</a>
+                <a href="{{ DOCSURL }}">Documentation</a>
+                <a href="#">Download</a>
         </div>
         {% block index %}
         {% endblock %} 
@@ -36,16 +31,12 @@
                 <hr />
                 <h5>Pages</h5>
                 <ul>
-                    {% for title, link in MENUITEMS %}
-                    <li><a href="{{ link }}">{{ title }}</a></li>
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for page in PAGES %}
+                        <li><a href="{{ SITEURL }}/index.html">Home</a></li>    
+                    {% for page in PAGES if not page.index %}
                     <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
                     {% endfor %}
 
-                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
 
                     <!--{#{% for cat, null in categories %}
                     <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
@@ -69,7 +60,7 @@
         <footer>
         <div class="row" id="footerRow">
             <div id="osu-logo" class="footerDiv">
-                <a href="http://oregonstate.edu"><img src="./theme/img/Simple-black_1.png"></a>
+                    <a href="http://oregonstate.edu"><img src="{{ SITEURL }}/theme/img/Simple-black_1.png"></a>
             </div>
 
             <div id="footer-text">

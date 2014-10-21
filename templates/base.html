@@ -13,25 +13,27 @@
         <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/favicon.png" />
         <!-- Crete Round Web font <3 -->
         <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+
 </head>
     <body>
         <div id="page-header">
-                <a href="{{ SITEURL }}" id="logo"><img src="{{ SITEURL }}/theme/img/logo.png" alt="{{ SITENAME }} Logo" /></a>
-                <a href="https://github.com/osuosl/{{SITENAME}}">Github</a>
-                <a href="{{ DOCSURL }}">Documentation</a>
-                <a href="#">Download</a>
+            <a href="{{ SITEURL }}" id="logo"><img src="{{ SITEURL }}/images/darklogo.png" alt="{{ SITENAME }} Logo" /></a>
+            <a href="https://github.com/osuosl/{{SITENAME}}">Github</a>
+            <a href="{{ DOCSURL }}">Documentation</a>
+            <a href="#">Download</a>
         </div>
+        <div class='spacer'></div>
         {% block index %}
         {% endblock %} 
         <div class="main-content">
             <div class="sidebar">
                 <h5>Documentation</h5>
-                <p><a href="#">Available here</a>
+                <p><a href="{{ DOCSURL }}">Available here</a>
                 <hr />
                 <h5>Pages</h5>
                 <ul>
-                        <li><a href="{{ SITEURL }}/index.html">Home</a></li>    
+                    <li><a href="{{ SITEURL }}/index.html">Home</a></li>    
                     {% for page in PAGES if not page.index %}
                     <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
                     {% endfor %}
@@ -60,9 +62,20 @@
         <footer>
         <div class="row" id="footerRow">
             <div id="osu-logo" class="footerDiv">
-                    <a href="http://oregonstate.edu"><img src="{{ SITEURL }}/theme/img/Simple-black_1.png"></a>
+                <a href="http://oregonstate.edu"><img src="{{ SITEURL }}/theme/img/Simple-black_1.png"></a>
             </div>
+            <ul>
+                <li><a href="{{ SITEURL }}/index.html">Home</a></li>    
+                {% for page in PAGES if not page.index %}
+                <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
 
+                <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+
+                <!--{#{% for cat, null in categories %}
+                <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                {% endfor %}#}-->
+            </ul>
             <div id="footer-text">
                 <p><strong>{{ SITENAME }}</strong> is hosted and developed by the <a class="osl-link" href="http://osuosl.org">OSU Open Source Lab</a></p><p>This site built using <a href="http://docs.getpelican.com/en/3.3.0/">Pelican.</a></p>
             </div>

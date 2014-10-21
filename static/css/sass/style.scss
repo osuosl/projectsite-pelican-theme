@@ -1,62 +1,31 @@
-// Global Foundation Settings
-@import "settings";
-
-// Comment out this import if you don't want to use normalize
 @import "normalize";
-
-@import "foundation/components/global"; // *always required
-@import "foundation/components/grid";
-// @import "foundation/components/visibility";
-// @import "foundation/components/block-grid";
-@import "foundation/components/type";
-@import "foundation/components/buttons";
-// @import "foundation/components/forms"; // *requires components/buttons
-// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
-// @import "foundation/components/button-groups"; // *requires components/buttons
-// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
-// @import "foundation/components/split-buttons"; // *requires components/buttons
-// @import "foundation/components/flex-video";
-// @import "foundation/components/section";
-// @import "foundation/components/top-bar";  // *requires components/grid
-// @import "foundation/components/orbit";
-// @import "foundation/components/reveal";
-// @import "foundation/components/joyride";
-// @import "foundation/components/clearing";
-// @import "foundation/components/alert-boxes";
-@import "foundation/components/breadcrumbs";
-@import "foundation/components/keystrokes";
-// @import "foundation/components/labels";
-// @import "foundation/components/inline-lists";
-// @import "foundation/components/pagination";
-@import "foundation/components/panels";
-// @import "foundation/components/pricing-tables";
-// @import "foundation/components/progress-bars";
-// @import "foundation/components/side-nav";
-// @import "foundation/components/sub-nav";
-// @import "foundation/components/switch";
-// @import "foundation/components/magellan";
-// @import "foundation/components/tables";
-// @import "foundation/components/thumbs";
-// @import "foundation/components/tooltips";
-// @import "foundation/components/dropdown";
-
+@import url(http://fonts.googleapis.com/css?family=Bitter|Open+Sans|Gudea|Montserrat);
 //Setting color variables
 //Bodybg defines the background color for the body
 $bodybg: #F3F2ED;
 
 //Primary color is for homepage banner, sidebar, and footer
-$primarycolor: #424242;
+$primary: #373737;
 
 //Secondary color is for nav menu and download bar
-$secondarycolor: #5D87A1;
+$secondary: #f3f2ed;//#c34500;
 
-//Accent is for links
-$accent: #EE5D1A; 
+//Code background color
+$code: #ddd;
+
+//Accent is for 
+$accent: #c34500;
+$links: #C9C0B7; 
 
 //And then we have text colors
-$darktext: #000;
+$darktext: #333;
 $lighttext: #fff;
 
+//Height of top navigation bar
+$navheight: 70px;
+
+//Fonts
+$sans: 'Montserrat', sans-serif;
 
 body{
     height: 100%;
@@ -65,213 +34,211 @@ body{
     background: $bodybg;
 }
 
+html{
+    color: $darktext;
+    background: $bodybg;
+}
+
+/*Universal styles*/
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 /*Header and main navigation CSS*/
 #page-header {
-    @extend .large-12, .small-12, .columns;
-    background: $secondarycolor; 
-    padding-top:emCalc(16px);
-    padding-bottom:emCalc(16px);
+    width: 100%;
+    background: rgba(243, 242, 237, .8); 
     top:0px;
-	position: relative;
-	z-index:99;
-	height: 100px;
-}
+    position: fixed;
+    z-index:99;
+    height: $navheight;
 
-.logo {
-    @extend .large-3, .columns;
-    display: inline-block;
-}
+    #logo {
+        display: inline-block;
+        float:left !important;
 
-.download {
-    @extend .large-3, .columns;
-    font-family: "crete round", serif;
-    font-size: 1.1em;
-    margin: 0px 10px;
-    padding: 0px;
-    width: auto;
-    text-align: center;
-    display:inline-block;
-	float:right;
-}
-
-.download a{
-    @extend .button, .success;
-    margin:emCalc(6px) 0px;
-    background: $primarycolor;
-    border-radius: 15px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border: 2px solid black;
-    color: $lighttext;
-}
-
-.download-button:hover,
-.download-button:focus{
-    background: #767676;
-    color: #fff;
-    cursor: pointer;
-}
-
-.download-button{
-    display:inline-block;
-    font-family: 'Crete round', serif;
-    font-size: 1.1em;
-    margin: 0px 10px;
-    float: right;
+        img{
+            vertical-align: middle;
+        }
     }
+
+    a{
+        display:inline-block;
+        font-size: 1.7em;
+        color: $darktext;
+        margin: 0px 10px;
+        float: right;
+        line-height: $navheight;
+        vertical-align: middle;
+        height: 100%;
+        max-height: $navheight;
+    }
+
+    a:hover{
+        color: $accent;
+    }
+}
+
+.spacer{
+    height: $navheight;
+}
 
 /*Index page Styles*/
 #indexpage{
-	background: $primarycolor;
-	text-align: center;
-	height: 70vh;
-	min-height: 500px;
+    background: $primary;
+    text-align: center;
+    height: 70vh;
+    min-height: 500px;
     display: inline-block;
     clear: both;
+
+    p{
+        font-size: 1.7em;
+        color: $lighttext;
+        padding: 20px;
+        width: 30%;
+        margin: 0px;
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 
 #indexpage:before{
-        content:'';
-        display: inline-block;
-        height:100%;
-        vertical-align: middle;
-}
-
-#indexpage p{
-	font-family: 'crete round', serif;
-	color: $lighttext;
-	font-size: 24px;
-	padding: 20px;
-	width: 30%;
-	margin: 0px;
-	display: inline-block;
+    content:'';
+    display: inline-block;
+    height:100%;
     vertical-align: middle;
 }
 
+
+
 #welcome-image {
-	margin-right: auto;
-	margin-left: auto;
-	display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    display: inline-block;
     max-width: 60%;
     max-height: 80%;
     vertical-align: middle;
+
+    img{
+        max-width: 100%;
+    }
 }
 
 #downloadRibbon{
-	width: 100%;
-	height: 10vh;
-	min-height: 90px;
-	background: $secondarycolor;
-	text-align: center;
-	margin: 0px;
-	padding: 0px;
-}
+    width: 100%;
+    background: $secondary;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
 
-#downloadRibbon h2{
-	margin: 0px;
-	padding: 0px;
-	line-height: 100px;
-	font-family: 'crete round', serif;
-	font-size: 64px;
-	vertical-align: middle;
-	display:inline-block;
-}
+    h2{
+        margin: 0px;
+        padding: 0px;
+        line-height: 100px;
+        font-size: 64px;
+        vertical-align: middle;
+        display:inline-block;
+    }
 
-#downloadRibbon a{
-	color: $lighttext;
-	text-decoration: none;
-	transition: .5s;
-}
+    a{
+        color: $darktext;
+    }
 
-#downloadRibbon a:hover{
-	color: $accent;
+    a:hover{
+        color: $accent;
+    }
 }
 
 /*Main content CSS*/
-
 .main-content {
-    @extend .row;
-    /*margin-top:emCalc(-32px); z-index:99;*/
     position:relative;/*absolute*/
-    width: 80vw;
-    max-width: 80em;
+    width: 100%;
     border:2px solid #ddd;
-    background: $primarycolor;
-}
+    background: $primary;
 
-.main-content ul{
-    padding:0;
-    margin:0px;
-    list-style: none;
-}
+    ul{
+        padding:0;
+        margin:0px;
+        list-style: none;
+    }
 
-#welcome-message {
-    @extend .large-9, .small-12, .columns;
-    background: #fff;
-    padding:2em;
-min-height:600px;
-    width: 70%;
-}
+    #welcome-message {
+        width: 60%;
+        vertical-align: top;
+        background: $bodybg;
+        padding: 1.7em;
+        min-height:600px;
+        display: inline-block;
 
-/*Sidebar Styles*/
-.sidebar {
-    padding-top:emCalc(15px);
-    @extend .large-3, .small-12, .columns;
-    background: $primarycolor;
-    width: 30%;
-}
-.sidebar h5{
-    color: $lighttext;
-    font-family: 'crete round', serif;
-    font-size: 1.9em;
-    text-align: center;
-}
-.sidebar p, .sidebar li{
-    font-family: 'crete round', serif;
-    color: $lighttext;
-    font-size: 1.2em;
-    text-align: center;
-}
-.sidebar a{
-    color: $lighttext;
-    text-decoration: none !important;
-transition: .5s;
-	text-align: center;
-}
+        a{
+            color: $accent;
+        }
 
-.sidebar a:hover{
-    color: $accent;
-}
-.sidebar ul{
-	list-style-type: none;
-}
+        a:hover{
+            color: $links;
+        }
+    }
 
+    /*Sidebar Styles*/
+    .sidebar {
+        background: $primary;
+        width: 30%;
+        display: inline-block;
+
+        h5{
+            color: $lighttext;
+            text-align: center;
+            padding: 5px;
+        }
+
+        p, li {
+            color: $lighttext;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+    }
+}
 /*Footer CSS*/
 footer {
-    background: $primarycolor;
-    padding:emCalc(64px) 0 emCalc(32px) 0;
-    margin-top:emCalc(-32px)
-}
+    background: $primary;
+    padding-bottom: 20px;
 
-footer p {
-    color:#fff;
+    p {
+        color:#fff;
+    }
 }
 
 #footerRow{
     width: 80vw;
     max-width: 80em;
     margin: 0px auto;
+    text-align: center;
+
+    li {
+        color: $lighttext;
+        text-align: center;
+        display: inline-block;
+        padding: 0px 10px;
+
+    }
 }
 
 .footerDiv{
     display: inline-block;
     padding: 10px;
     margin: 0px;
-width: 200px !important;
+    width: 200px !important;
 }
 
 #osuosl-logo {
-@extend .large-2, .columns;
 }
 
 footer img{
@@ -282,7 +249,6 @@ footer img{
 }
 
 .donate {
-    @extend .large-2, .columns;
     text-align:right;
 }
 
@@ -294,16 +260,43 @@ footer img{
 /* * * *
 Typography
  * * * */
-a:link,
-a:active,
-a:visited {
-    text-decoration:none;
+h1, h2, h3, h4, h5, p, a, li, dt{
+    font-family: $sans;
+    padding:0px;
+    margin:0px;
+    line-height: 1.8em;
 }
 
-.byline {
-    text-transform:uppercase;
-    color:#777;
-    font-size:.9em;
+h1{
+    font-size: 48px;
+}
+
+h2{
+    font-size: 42px;
+}
+
+h3{
+    font-size: 36px;
+}
+
+h4{
+    font-size: 30px;
+}
+
+h5{
+    font-size: 24px;
+}
+
+p{
+    font-size: 18px;
+}
+
+a{
+    color: $secondary;
+}
+
+a:hover{
+    color: $accent;
 }
 
 ol {
@@ -312,8 +305,8 @@ ol {
 }
 
 ol li {
-    padding:emCalc(16px) 0 0 0;
     margin:0px;
+    padding: 0px;
 }
 
 ol li:first-child {
@@ -325,31 +318,39 @@ strong {
     font-weight: 600;
 }
 
-iframe {
-    width:100%;
+.code {
+    background-color: $code;
+    color: $darktext;
+    line-height: 1.6em;
+    vertical-align: middle;
+    font-family: 'Consolas', monospace;
+    display: inline;
+    padding: 2px;
+    border-radius: 3px;
+    border: 1px solid #bbb;
 }
 
 @media only screen and (max-width: 980px) {
     footer {
-	margin:0px;
-	padding:20px 0;
+        margin:0px;
+        padding:20px 0;
     }
 
     .download p {
-	font-size:1.2em;
+        font-size:1.2em;
     }
 
     #footer-text {
-	text-align:center;
-	padding:16px 0 0 0;
+        text-align:center;
+        padding:16px 0 0 0;
     }
 
     #osu-logo {
-	padding-bottom:16px;
+        padding-bottom:16px;
     }
 
     .logo {
-	text-align:center;
+        text-align:center;
     }
 
     .main-content{
@@ -359,29 +360,29 @@ iframe {
 
 @media only screen and (max-width: 840px){
     .sidebar{
-	display:none;
+        display:none;
     }
 
     .download{
-	width: 50%;
-	margin: 0px;
+        width: 50%;
+        margin: 0px;
     padding: 0px;}
 
     #welcome-message{
-	margin-right: auto 0;
+        margin-right: auto 0;
     margin-left: auto 0;}
-    
+
     #footer-text{
     width: 100%;}
 }
 
 @media only screen and (max-width: 380px){
-   #footer-text{
-    display: block;
+    #footer-text{
+        display: block;
     }
     .footerDiv{
-	float: none !important;
-    width:100%;
+        float: none !important;
+        width:100%;
     }
     .download{
     width: 100%;}
